@@ -56,7 +56,7 @@ function errorCallback(err) {
 function draw() {
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
-  // context.drawImage(video, 0, 0);
+  context.drawImage(video, 0, 0);
   context.drawImage(imgAry[0], 0, 0, canvas.width, canvas.width*aspectAry[0]);
   requestAnimationFrame(draw);
 }
