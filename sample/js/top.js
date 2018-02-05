@@ -55,7 +55,7 @@ function draw() {
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
   context.drawImage(video, 0, 0);
-  context.drawImagee(imgAry[i], 0, 0, canvas.width, canvas.height);
+  context.drawImage(imgAry[i], 0, 0, canvas.width, canvas.height);
   requestAnimationFrame(draw);
 }
 
