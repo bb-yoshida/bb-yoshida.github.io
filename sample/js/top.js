@@ -13,6 +13,7 @@ var fileAry = ['img/test.png'];
 var numFiles = fileAry.length;
 var loadedCounter = 0;
 var imgAry = [];
+var aspectAry = [];
 
 
 
@@ -25,8 +26,10 @@ function loadImgs(){
     var img = new Image();
 
     img.addEventListener('load', function(){
+    	var imgAspect =  img.height / img.width;
         loadedCounter++;
         imgAry.push(img);
+        aspectAry.push(imgAspect);
         if(numFiles == loadedCounter){
             requestAnimationFrame(draw);
         } else {
@@ -38,10 +41,9 @@ function loadImgs(){
 }
 
 
-
 navigator.getUserMedia(medias, successCallback, errorCallback);
 
-requestAnimationFrame(draw);
+// requestAnimationFrame(draw);
 
 function successCallback(stream) {
   video.srcObject = stream;
@@ -55,7 +57,7 @@ function draw() {
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
   context.drawImage(video, 0, 0);
-  context.drawImage(imgAry[i], 0, 0, canvas.width, canvas.height);
+  context.drawImage(imgAry[0], 0, 0, canvas.width, canvas.width*aspectAry[0]);
   requestAnimationFrame(draw);
 }
 
