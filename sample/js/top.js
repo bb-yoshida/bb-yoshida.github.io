@@ -1,7 +1,6 @@
 const medias = {audio : false, video : {
-        facingMode : {
-          exact : "environment"
-        }
+        facingMode : { exact : "environment" }
+        // facingMode: "user"
       }},
       video  = document.getElementById("video"),
       canvas = document.getElementById("canvas"),
