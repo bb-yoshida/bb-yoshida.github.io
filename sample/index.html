@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My Web App</title>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <style>
 body {
   margin: 0;
@@ -91,7 +92,33 @@ body {
 	top:-4px;
 	left:-4px;
     border: #F30 solid 2px; }
-	
+.btn_save {
+	position: absolute;
+	bottom: 20px;
+	left:0;
+	width: 100%;
+	z-index: 15;
+	text-align: center;
+}
+.btn_save2 {
+	position: absolute;
+	bottom: 20px;
+	left:0;
+	width: 100%;
+	z-index: 15;
+	text-align: center;
+	display: none;
+}
+.btnheight {
+	background-color: #fff;
+	display: inline-block;
+}
+#color_cell {
+	display: none;
+}
+#output {
+	display: none;
+}
 </style>
 
 </head>
@@ -113,7 +140,9 @@ body {
 <li><input type="radio" name="frame" value="11" id="red_line"><label for="red_line"></label></li>
 </ul>
 
-
+<p class="btn_save"><input class="btnheight" type="button" id="canvas_save" name="canvas_save" value="カメラ:保存" /></p>
+<p class="btn_save2"><input class="btnheight" type="button" id="canvas_save2" name="canvas_save2" value="キャンバス:保存" /></p>
+<img id="output" src="">
   <div id="videobox">
     <video id="video" autoplay playsinline></video>
   </div>
